@@ -1,0 +1,47 @@
+name: Commandos
+version: ${project.version}
+main: me.maurhice.commandos.Commandos
+api-version: 1.16
+authors: [Maurhice]
+description: Mijn geweldige commands
+commands:
+    Friet:
+        description: Fout!
+    Patat:
+        description: Goedzo!
+    Menu:
+        description: opent een gui!
+        aliases: [m, mod]
+    Tab:
+        description: Opent een Tab Kleur gui!
+        aliases: [kleur, tablist]
+    Kick:
+        description: Kickt een speler naar keuze
+        aliases: [kicker]
+    Prefix:
+            description: verandert de prefix
+            aliases: [Naam, p, pr]
+    Ban:
+        description: Bant een speler
+        aliases: [Banana, Bananas]
+    Craft:
+        description: Opent een Crafting table
+        aliases: [CT, Caft]
+    Health:
+        description: Voegt HP toe
+        aliases: [HP]
+    Tikkertje:
+        description: Start een Tikspel!
+        aliases: [Tik,Tikker]
+    Quit:
+        description: stopt het tikspel!
+        aliases: [Quittik, Quitikker]
+    Kit:
+        description: Opent een Kit menu
+        aliases: [Kits]
+    Selector:
+        description: Geeft een selector
+        aliases: [Sct,Selectr]
+    CraftMenu:
+
+
