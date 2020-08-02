@@ -34,8 +34,8 @@ public final class Commandos extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new DamageEvent(), this);
         getServer().getPluginManager().registerEvents(new DeathEvent(),this);
         getServer().getPluginManager().registerEvents(new RightClick(),this);
-        getServer().getPluginManager().registerEvents(new RightClick(), this);
         getServer().getPluginManager().registerEvents(new JoinEvent(),this);
+        getServer().getPluginManager().registerEvents(new CraftEvent(), this);
         CreateCommandosConfig();
 
 

@@ -253,10 +253,10 @@ public class ClickEvent implements Listener {
                     if(player.getInventory().contains(Material.IRON_INGOT,6)){
                         player.getInventory().removeItem(new ItemStack(Material.IRON_INGOT,6));
                         player.getInventory().addItem(new ItemStack(Material.IRON_BOOTS,1));
-                        String message = Utils.chat("&2Je hebt zojuist ijzeren boots gecraft!");
+                        String message = Utils.chat("&aJe hebt zojuist ijzeren boots gecraft!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }else{
-                        String message = Utils.chat("&2Je hebt niet genoeg ijzer!");
+                        String message = Utils.chat("&4Je hebt niet genoeg ijzer!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }
                     break;
@@ -264,10 +264,10 @@ public class ClickEvent implements Listener {
                     if(player.getInventory().contains(Material.IRON_INGOT,9)){
                         player.getInventory().removeItem(new ItemStack(Material.IRON_INGOT,9));
                         player.getInventory().addItem(new ItemStack(Material.IRON_LEGGINGS,1));
-                        String message = Utils.chat("&2Je hebt zojuist een ijzeren broek gecraft!");
+                        String message = Utils.chat("&aJe hebt zojuist een ijzeren broek gecraft!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }else{
-                        String message = Utils.chat("&2Je hebt niet genoeg ijzer!");
+                        String message = Utils.chat("&4Je hebt niet genoeg ijzer!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }
                     break;
@@ -275,10 +275,10 @@ public class ClickEvent implements Listener {
                     if(player.getInventory().contains(Material.IRON_INGOT,12)){
                         player.getInventory().removeItem(new ItemStack(Material.IRON_INGOT,12));
                         player.getInventory().addItem(new ItemStack(Material.IRON_CHESTPLATE,1));
-                        String message = Utils.chat("&2Je hebt zojuist een ijzeren harnas gecraft!");
+                        String message = Utils.chat("&aJe hebt zojuist een ijzeren harnas gecraft!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }else{
-                        String message = Utils.chat("&2Je hebt niet genoeg ijzer!");
+                        String message = Utils.chat("&4Je hebt niet genoeg ijzer!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }
                     break;
@@ -287,10 +287,10 @@ public class ClickEvent implements Listener {
                     if(player.getInventory().contains(Material.IRON_INGOT,7)){
                         player.getInventory().removeItem(new ItemStack(Material.IRON_INGOT,7));
                         player.getInventory().addItem(new ItemStack(Material.IRON_HELMET,1));
-                        String message = Utils.chat("&2Je hebt zojuist een ijzeren helm gecraft!");
+                        String message = Utils.chat("&aJe hebt zojuist een ijzeren helm gecraft!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }else{
-                        String message = Utils.chat("&2Je hebt niet genoeg ijzer!");
+                        String message = Utils.chat("&4Je hebt niet genoeg ijzer!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }
                     break;
@@ -304,10 +304,10 @@ public class ClickEvent implements Listener {
                         player.getInventory().addItem(new ItemStack(Material.IRON_BOOTS,1));
                         player.getInventory().addItem(new ItemStack(Material.IRON_SWORD,1));
                         player.getInventory().addItem(new ItemStack(Material.IRON_PICKAXE,1));
-                        String message = Utils.chat("&2Je hebt zojuist een ijzeren set gecraft!");
+                        String message = Utils.chat("&aJe hebt zojuist een ijzeren set gecraft!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }else{
-                        String message = Utils.chat("&2Je hebt niet genoeg ijzer!");
+                        String message = Utils.chat("&4Je hebt niet genoeg ijzer!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }
                     break;
