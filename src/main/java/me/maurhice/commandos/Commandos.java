@@ -48,6 +48,9 @@ public final class Commandos extends JavaPlugin {
 
 
 
+
+
+
     }
     public FileConfiguration getCommandosConfig() {
         return this.CommandosConfig;
@@ -58,8 +61,12 @@ public final class Commandos extends JavaPlugin {
             CommandosConfigFile = new File(getDataFolder(), "Commandos.yml");
             if (!CommandosConfigFile.exists()) {
                 CommandosConfigFile.getParentFile().mkdirs();
-                saveResource("Commandos.yml", false);
+                this.getConfig().addDefault("prefix", "&8[&5Test&8]&r");
+                this.getConfig().options().copyDefaults(true);
+                this.saveConfig();
             }
+            saveResource("Commandos.yml", false);
+
             try {
                 CommandosConfig.load(CommandosConfigFile);
             } catch (IOException | InvalidConfigurationException e) {
@@ -281,6 +288,8 @@ public final class Commandos extends JavaPlugin {
                         if (target instanceof Player) {
                             target.setPlayerListName(Utils.chat(prefix + " " + Naam));
                             player.sendMessage(Utils.chat("&6Prefix is aangepast"));
+                            String playerprefix = player.getName() + ":" + "\n" + "prefix:" + "\n" + "'" + prefix + "'" + "\n";
+                            this.getConfig().set(playerprefix,true);
                         } else {
                             player.sendMessage(Utils.chat( "&eDeze speler is niet online"));
                         }

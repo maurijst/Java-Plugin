@@ -17,8 +17,7 @@ import org.bukkit.potion.PotionType;
 
 import java.awt.*;
 
-import static org.bukkit.Bukkit.getServer;
-import static org.bukkit.Bukkit.getWorld;
+import static org.bukkit.Bukkit.*;
 
 public class ClickEvent implements Listener {
 
@@ -92,12 +91,14 @@ public class ClickEvent implements Listener {
 
                 case GOLDEN_APPLE:
                     getWorld("world").setDifficulty(Difficulty.PEACEFUL);
-                    player.sendMessage(ChatColor.LIGHT_PURPLE + "Difficulty aangepast naar vredig!");
+                    String message = ChatColor.LIGHT_PURPLE + "Difficulty aangepast naar vredig!";
+                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR,TextComponent.fromLegacyText(message));
                     break;
 
                 case DOUBLE_PLANT:
                     getWorld("world").setTime(6);
-                    player.sendMessage(ChatColor.AQUA + "Het is nu dag!");
+                   String message1 = ChatColor.AQUA + "Het is nu dag!";
+                   player.spigot().sendMessage(ChatMessageType.ACTION_BAR,TextComponent.fromLegacyText(message1));
                     player.closeInventory();
                     break;
 
@@ -105,10 +106,12 @@ public class ClickEvent implements Listener {
                     if(player.isOp()){
                     if (player.hasPotionEffect(PotionEffectType.INVISIBILITY)) {
                         player.removePotionEffect(PotionEffectType.INVISIBILITY);
-                        player.sendMessage(ChatColor.AQUA + "Je bent uit vanish gegaan");
+                        String message2 = ChatColor.AQUA + "Je bent uit vanish gegaan";
+                        player.spigot().sendMessage(ChatMessageType.ACTION_BAR,TextComponent.fromLegacyText(message2));
 
                     } else {
-                        player.sendMessage(ChatColor.DARK_PURPLE + "Je bent in vanish gegaan!");
+                        String message3 = ChatColor.DARK_PURPLE + "Je bent in vanish gegaan!";
+                        player.spigot().sendMessage(ChatMessageType.ACTION_BAR,TextComponent.fromLegacyText(message3));
                         player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, Integer.MAX_VALUE, 1, true, false));
                         player.closeInventory();
                     }
@@ -250,10 +253,10 @@ public class ClickEvent implements Listener {
                     if(player.getInventory().contains(Material.IRON_INGOT,6)){
                         player.getInventory().removeItem(new ItemStack(Material.IRON_INGOT,6));
                         player.getInventory().addItem(new ItemStack(Material.IRON_BOOTS,1));
-                        String message = Utils.chat("&7Je hebt zojuist ijzeren boots gecraft!");
+                        String message = Utils.chat("&2Je hebt zojuist ijzeren boots gecraft!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }else{
-                        String message = Utils.chat("&7Je hebt niet genoeg ijzer!");
+                        String message = Utils.chat("&2Je hebt niet genoeg ijzer!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }
                     break;
@@ -261,10 +264,10 @@ public class ClickEvent implements Listener {
                     if(player.getInventory().contains(Material.IRON_INGOT,9)){
                         player.getInventory().removeItem(new ItemStack(Material.IRON_INGOT,9));
                         player.getInventory().addItem(new ItemStack(Material.IRON_LEGGINGS,1));
-                        String message = Utils.chat("&7Je hebt zojuist een ijzeren broek gecraft!");
+                        String message = Utils.chat("&2Je hebt zojuist een ijzeren broek gecraft!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }else{
-                        String message = Utils.chat("&7Je hebt niet genoeg ijzer!");
+                        String message = Utils.chat("&2Je hebt niet genoeg ijzer!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }
                     break;
@@ -272,10 +275,10 @@ public class ClickEvent implements Listener {
                     if(player.getInventory().contains(Material.IRON_INGOT,12)){
                         player.getInventory().removeItem(new ItemStack(Material.IRON_INGOT,12));
                         player.getInventory().addItem(new ItemStack(Material.IRON_CHESTPLATE,1));
-                        String message = Utils.chat("&7Je hebt zojuist een ijzeren harnas gecraft!");
+                        String message = Utils.chat("&2Je hebt zojuist een ijzeren harnas gecraft!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }else{
-                        String message = Utils.chat("&7Je hebt niet genoeg ijzer!");
+                        String message = Utils.chat("&2Je hebt niet genoeg ijzer!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }
                     break;
@@ -284,10 +287,10 @@ public class ClickEvent implements Listener {
                     if(player.getInventory().contains(Material.IRON_INGOT,7)){
                         player.getInventory().removeItem(new ItemStack(Material.IRON_INGOT,7));
                         player.getInventory().addItem(new ItemStack(Material.IRON_HELMET,1));
-                        String message = Utils.chat("&7Je hebt zojuist een ijzeren helm gecraft!");
+                        String message = Utils.chat("&2Je hebt zojuist een ijzeren helm gecraft!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }else{
-                        String message = Utils.chat("&7Je hebt niet genoeg ijzer!");
+                        String message = Utils.chat("&2Je hebt niet genoeg ijzer!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }
                     break;
@@ -301,10 +304,10 @@ public class ClickEvent implements Listener {
                         player.getInventory().addItem(new ItemStack(Material.IRON_BOOTS,1));
                         player.getInventory().addItem(new ItemStack(Material.IRON_SWORD,1));
                         player.getInventory().addItem(new ItemStack(Material.IRON_PICKAXE,1));
-                        String message = Utils.chat("&7Je hebt zojuist een ijzeren set gecraft!");
+                        String message = Utils.chat("&2Je hebt zojuist een ijzeren set gecraft!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }else{
-                        String message = Utils.chat("&7Je hebt niet genoeg ijzer!");
+                        String message = Utils.chat("&2Je hebt niet genoeg ijzer!");
                         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
                     }
                     break;
