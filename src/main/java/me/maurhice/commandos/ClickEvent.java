@@ -10,12 +10,16 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.potion.PotionType;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 import static org.bukkit.Bukkit.*;
 
@@ -312,8 +316,113 @@ public class ClickEvent implements Listener {
                     }
                     break;
 
+                case SPECTRAL_ARROW:
+                   Inventory Next = Bukkit.createInventory(player,27,ChatColor.GOLD + "Page 2" );
+                   ItemStack test = new ItemStack(Material.DIAMOND_BOOTS);
+                    ItemStack vul = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
+                    ItemStack vul2 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);
+                    ItemStack vul3 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 7);
+                    ItemStack vul4 = new ItemStack(Material.AIR);
+                    ItemStack rep6 = new ItemStack(Material.SPECTRAL_ARROW);
+                    ItemStack rep7 = new ItemStack(Material.ARROW);
+
+                   ItemStack[] menu_items = {vul, vul, vul, vul3, vul2, vul3, vul, vul, vul,rep7,vul4,vul4,vul4,test,vul4,vul4,vul4,rep6,vul, vul, vul, vul3, vul2, vul3, vul, vul, vul,};
+                   Next.setContents(menu_items);
+                   player.openInventory(Next);
+
+
+                   }
+
+
+            e.setCancelled(true);
+
+
+            }
+        if(e.getClickedInventory().getTitle().equalsIgnoreCase(ChatColor.GOLD + "Page 2" )) {
+            switch (e.getCurrentItem().getType()) {
+
+                case DIAMOND_BOOTS:
+                    if (player.getInventory().contains(Material.DIAMOND, 6)) {
+                        player.getInventory().addItem(new ItemStack(Material.DIAMOND_BOOTS, 1));
+                        player.getInventory().removeItem(new ItemStack(Material.DIAMOND,6));
+                        String message = Utils.chat("&aJe hebt diamanten boots gecraft");
+                        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
+                    } else {
+                        String message = Utils.chat("&4Je hebt niet genoeg diamanten!");
+                        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
+                    }
+                case ARROW:
+                    Inventory Previous = Bukkit.createInventory(player,27,ChatColor.DARK_GRAY + "Craft Menu");
+                    ItemStack rep1 = new ItemStack(Material.IRON_CHESTPLATE);
+                    ItemStack rep2 = new ItemStack(Material.IRON_LEGGINGS);
+                    ItemStack rep3 = new ItemStack(Material.IRON_HELMET);
+                    ItemStack rep4 = new ItemStack(Material.IRON_BOOTS);
+                    ItemStack vul = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
+                    ItemStack vul2 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);
+                    ItemStack vul3 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 7);
+                    ItemStack vul4 = new ItemStack(Material.AIR);
+                    ItemStack rep5 = new ItemStack(Material.IRON_BLOCK);
+                    ItemStack rep6 = new ItemStack(Material.SPECTRAL_ARROW);
+                    ItemStack rep7 = new ItemStack(Material.ARROW);
+
+                    ItemMeta rep1_meta = rep1.getItemMeta();
+                    rep1_meta.setDisplayName(Utils.chat("&7Craft a Chestplate"));
+                    ArrayList<String> rep1_lore = new ArrayList<String>();
+                    rep1_lore.add(Utils.chat("&5Benodigdheden:"));
+                    rep1_lore.add(Utils.chat("&f12 Iron Ingots"));
+                    rep1_meta.setLore(rep1_lore);
+                    rep1.setItemMeta(rep1_meta);
+
+                    ItemMeta rep2_meta = rep2.getItemMeta();
+                    rep2_meta.setDisplayName(Utils.chat("&7Craft Leggings"));
+                    ArrayList<String> rep2_lore = new ArrayList<String>();
+                    rep2_lore.add(Utils.chat("&5Benodigdheden:"));
+                    rep2_lore.add(Utils.chat("&f9 Iron Ingots"));
+                    rep2_meta.setLore(rep2_lore);
+                    rep2.setItemMeta(rep2_meta);
+
+                    ItemMeta rep3_meta = rep3.getItemMeta();
+                    rep3_meta.setDisplayName(Utils.chat("&7Craft a Helmet"));
+                    ArrayList<String> rep3_lore = new ArrayList<String>();
+                    rep3_lore.add(Utils.chat("&5Benodigdheden:"));
+                    rep3_lore.add(Utils.chat("&f7 Iron Ingots"));
+                    rep3_meta.setLore(rep3_lore);
+                    rep3.setItemMeta(rep3_meta);
+
+                    ItemMeta rep4_meta = rep4.getItemMeta();
+                    rep4_meta.setDisplayName(Utils.chat("&7Craft Boots"));
+                    ArrayList<String> rep4_lore = new ArrayList<String>();
+                    rep4_lore.add(Utils.chat("&5Benodigdheden:"));
+                    rep4_lore.add(Utils.chat("&f6 Iron Ingots"));
+                    rep4_meta.setLore(rep4_lore);
+                    rep4.setItemMeta(rep4_meta);
+
+                    ItemMeta rep5_meta = rep5.getItemMeta();
+                    rep5_meta.setDisplayName(Utils.chat("&7Craft Set"));
+                    ArrayList<String> rep5_lore = new ArrayList<String>();
+                    rep5_lore.add(Utils.chat("&5Benodigdheden:"));
+                    rep5_lore.add(Utils.chat("&f32 Iron Ingots"));
+                    rep5_meta.setLore(rep5_lore);
+                    rep5.setItemMeta(rep5_meta);
+
+                    ItemMeta rep6_meta = rep6.getItemMeta();
+                    rep6_meta.setDisplayName(Utils.chat("&5Next Page"));
+                    rep6.setItemMeta(rep6_meta);
+
+                    ItemMeta rep7_meta = rep7.getItemMeta();
+                    rep7_meta.setDisplayName(Utils.chat("&5Previous Page"));
+                    rep7.setItemMeta(rep7_meta);
+
+
+                    ItemStack[] Crafts = {vul, vul, vul, vul3, vul2, vul3, vul, vul, vul, rep7, vul4, rep3, rep1, rep5, rep2, rep4, vul4, rep6, vul, vul, vul, vul3, vul2, vul3, vul, vul, vul};
+                    Previous.setContents(Crafts);
+                    player.openInventory(Previous);
+
+
+
             }
             e.setCancelled(true);
+
         }
 
 
